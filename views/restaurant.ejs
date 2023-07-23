@@ -1,0 +1,54 @@
+<section class="profile-page">
+    <div class="profile-detail">
+      <img src="images/24chix (1).jpg" alt="">
+      <div class="input-group">
+        <fieldset class="star-rating">
+          <input type="radio" id="star5" name="rating" value="5" disabled />
+          <label for="star5"><span class="star">&#9733;</span></label>
+          <input type="radio" id="star4" name="rating" value="4" disabled />
+          <label for="star4"><span class="star">&#9733;</span></label>
+          <input type="radio" id="star3" name="rating" value="3" checked disabled />
+          <label for="star3"><span class="star">&#9733;</span></label>
+          <input type="radio" id="star2" name="rating" value="2" disabled />
+          <label for="star2"><span class="star">&#9733;</span></label>
+          <input type="radio" id="star1" name="rating" value="1" disabled />
+          <label for="star1"><span class="star">&#9733;</span></label>
+        </fieldset>
+      </div>
+      <p class="profile-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+      <!-- Add the Rate Us button below the profile description -->
+      <% if (user) { %>
+        <a class="rate-us-button" href="/reviews/<%= restaurant._id %>" style="text-decoration: none;">Rate Us!</a>
+      <% } else { %>
+        <a class="rate-us-button" href="/login" style="text-decoration: none;">Log In</a>
+    <% } %>
+    
+    </div>
+        <div class="profile-reviews">
+            <% for( let i = 0; i < reviews.length; i++ ) { %>
+            <div class="profile-name-row">
+              <span class="profile-name"><h1>24 Chicken</h1></span>
+            </div>
+            <div class="review">
+              <img src="<%= restaurant.reviewPhotoUrl %>" alt="Review 1">
+              <h4>Sarah Tan</h4>
+              <div class="input-group">
+                <fieldset class="star-rating">
+                    <% for( let index = 0; index < reviews[i].starRating; index++ ) { %>
+                        <input type="radio" id="star<%= 5 - index %>" name="rating" value="<%= 5 - index %>" disabled />
+                        <label for="star<%= 5 - index %>"><span class="star">&#9733;</span></label>
+                    <% } %>
+                </fieldset>
+            </div>
+              
+              <p><%= reviews[i].review %> </p>
+              <div class="review-buttons">
+                <button class="edit-button">Edit</button>
+                <button class="delete-button">Delete</button>
+              </div>
+            </div>
+            <% } %>
+        </div>
+            
+    
+  </section>

@@ -1,0 +1,141 @@
+
+.home-main-section {
+    display: flex;
+    align-items: stretch;
+    align-items: center;
+    justify-content: center;
+    /*flex-grow: 1; */
+  }
+  
+  .home-main-section .img-wrapper {
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+  }
+  
+  .home-main-section .lady-image {
+    background-image: url(images/landing-page-girl.png);
+    flex-grow: 1;
+    max-height: 70vh;
+    min-width: 30vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+  
+  .home-main-section .call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    text-align: center; /* Center the text within the container */
+  margin: 1rem;
+  align-self: center;
+  }
+/* Existing CSS code for .home-main-section and .call-to-action remain the same */
+
+/* Existing CSS code for .restaurant-view */
+.restaurant-view {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to new rows when needed */
+  justify-content: space-around; /* Space the cards evenly horizontally */
+  padding: 10px 0;
+}
+
+/* Existing CSS code for .restaurant-card */
+.restaurant-card {
+  width: 29%; /* Set the width of each card to occupy 30% of the container */
+  text-align: center;
+  margin-bottom: 20px; /* Add some bottom margin to create space between cards */
+}
+
+/* Existing CSS code for .restaurant-card img */
+.restaurant-card img {
+  width: 70%; /* Make the image occupy the full width of the card */
+  height: auto;
+  border-radius: 10px; /* Make the images slightly curved */
+  border: 5px solid #F1AC18; /* Add a yellow border to the restaurant cards */
+  border-radius: 10px;
+}
+
+/* Existing CSS code for .restaurant-title */
+.restaurant-title {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+/* Existing CSS code for .restaurant-description */
+.restaurant-description {
+  font-size: 16px;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show only 3 lines of text */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis to indicate text is truncated */
+}
+
+/* New media query to adjust the layout on smaller screens */
+@media (max-width: 900px) {
+  .home-main-section .img-wrapper {
+    display: none;
+  }
+
+  .home-main-section {
+    justify-content: center;
+  }
+
+  .restaurant-card {
+    width: 100%; /* Make each card occupy the full width of the container on smaller screens */
+  }
+}
+
+.searchBar {
+    transform: translateY(-100px);
+    background-color: var(--black);
+    padding: 4px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  
+  
+  .searchBar.open {
+    transform: translateY(0);
+    transition: transform 0.1s;
+  }
+  
+  .searchBar input {
+    margin: 0;
+    border: 0;
+  }
+  
+  #searchClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--gray-light);
+    padding: 15px;
+  }
+  
+  
+  .pagination {
+    font-size: 1.3rem;
+    color: var(--gray);
+    text-decoration: none;
+    margin-top: 40px;
+    display: inline-block;
+  }
+  
+  .pagination:hover {
+    color: var(--black);
+  }
+
+.restaurant-card img {
+    width: 12em; /* Set the width of each card to occupy 30% of the container */
+    height: 12em;
+    text-align: center;
+    margin-bottom: 20px; /* Add some bottom margin to create space between cards */
+}

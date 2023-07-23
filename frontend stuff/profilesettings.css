@@ -1,0 +1,127 @@
+.join-main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 1000px;
+  }
+  
+.join-text {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .accent-text {
+    color: #F1AC18;
+  }
+  
+  .join-form {
+    background-color: #c7d8ad;
+    width: 300vw;
+    max-width: 80%;
+    padding: 2rem 4rem;
+    border-radius: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.half-bar{
+    width: 48%;
+}
+  .input-group {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group:last-child {
+    margin-bottom: 0;
+  }
+  
+  .input-group label {
+    font-weight: bold;
+    margin-bottom: .5rem;
+  }
+  
+  .input-group input {
+    outline: none;
+    background: white;
+    border: 1px solid #2E3852;
+    font-size: 1em;
+    padding: .5em;
+    color: inherit;
+    border-radius: 5px;
+  }
+  
+  .input-group input:focus {
+    border-color: #596da0;
+  }
+
+  .join-form p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .join-form a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .join-form a:hover {
+    text-decoration: none;
+    color: #555555;
+  } 
+
+/* Styling for the profile picture and change button container */
+.profile-picture {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+/* Styling for the profile picture */
+
+.profile-picture img {
+  text-align: center;
+  display: flex;
+  width: 250px; /* Adjust the width to your preferred size */
+  height: 250px; /* Adjust the height to your preferred size */
+  border-radius: 60%; /* Create a circular profile picture */
+  margin-bottom: 20px;
+
+}
+
+/* Styling for the "Change profile picture" button container */
+.change-btn-container {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 0; /* Place the button at the bottom of the profile container */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; /* Center the button horizontally */
+}
+
+/* Styling for the "Change profile picture" button */
+.change-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Optional: Hover effect for the "Change profile picture" button */
+.change-btn:hover {
+  background-color: #0056b3;
+}
+
+  

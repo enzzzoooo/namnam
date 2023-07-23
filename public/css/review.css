@@ -1,0 +1,132 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.join-main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.join-text {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.accent-text {
+  color: #F1AC18;
+}
+
+.join-form {
+  background-color: #c7d8ad;
+  width: 50vw;
+  max-width: 50%;
+  padding: 2rem 4rem;
+  border-radius: 20px;
+}
+
+.input-group {
+  outline: none;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group:last-child {
+  margin-bottom: 0;
+}
+
+.input-group label {
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+.input-group input {
+  outline: none;
+  background: white;
+  border: 1px solid #2E3852;
+  font-size: 1em;
+  padding: .5em;
+  color: inherit;
+  border-radius: 5px;
+}
+
+.input-group input:focus {
+  border-color: #596da0;
+}
+
+.join-form p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.join-form a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.join-form a:hover {
+  text-decoration: none;
+  color: #555555;
+}
+
+.star-rating {
+  color: gold; /* Color for inactive stars */
+}
+
+.star-rating .star {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  transition: color 0.3s; /* Transition effect for color change */
+}
+
+.star-rating input[type="radio"] {
+  display: none; /* Hide the radio buttons */
+}
+
+.star-rating input[type="radio"]:checked ~ label .star,
+.star-rating label:hover ~ label .star {
+  color: gray; /* Color for active (selected) and hovered stars */
+}
+
+.star-rating input[type="radio"]:checked + label .star {
+  color: gold; /* Or any other color to represent the highlighted star */
+}
+
+.media-input input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+.media-input label {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.attachmedia-input label:hover {
+  background-color: #555;
+}
+
+fieldset {
+  outline: none;
+}
+
+.input-group select {
+  outline: none;
+  background: white;
+  border: 1px solid #2E3852;
+  font-size: 1em;
+  padding: .5em;
+  color: inherit;
+  border-radius: 5px;
+}
+
+.input-group select:focus {
+  border-color: #596da0;
+}

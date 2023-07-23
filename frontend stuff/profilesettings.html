@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="styles.css" rel="stylesheet">
+  <link href="profilesettings.css" rel="stylesheet">
+  <title>namnam</title>
+</head>
+<body class="full-height-grow">
+  <div class="container full-height-grow">
+    <header class="main-header">
+      <a href="/" class="brand-logo">
+        <img src="images/logo.png">
+        <div class="brand-logo-name">namnam</div>
+      </a>
+      <nav class="main-nav">
+        <ul>
+        </ul>
+      </nav>
+    </header>
+    <section class="join-main-section">
+      <h1 class="join-text">
+        profile
+        <span class="accent-text">settings.</span>
+      </h1>
+      <form class="join-form">
+        <div class="profile-container">
+          <input type="file" id="profile-picture-input" accept="image/*" style="display: none;" onchange="handleFileChange(event)">
+          <label for="profile-picture-input">
+            <div class="profile-picture">
+              <!-- Profile picture image goes here -->
+              <img src="images/pp.jpeg" alt="Profile Picture">
+              <div class="input-group">
+                <button type="submit" class="btn">Change profile picture</button>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="input-group">
+          <label>Username:</label>
+          <input type="username">
+        </div>
+        <div class="input-group">
+          <label>Profile Description:</label>
+          <input type="description">
+        </div>
+        <div class="input-group">
+          <button type="submit" class="btn">Save Changes.</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
