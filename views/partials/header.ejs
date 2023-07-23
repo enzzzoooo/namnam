@@ -4,17 +4,13 @@
       <div class="brand-logo-name">namnam</div>
     </a>
     <nav class="main-nav">
-      <ul class="flex-center">
-        <li><a href="discover.html">Explore</a></li>
-        <li><a href="/login">Log In</a></li>
+      <ul class="flex-center">    
           <% if (user) { %>
               <li><a href="/profile/<%= user._id %>">
                   <img class="profile-image" src="<%= user.displayPhotoUrl %>" alt="">
               </a></li>
           <% } else { %>
-              <li><a href="selfprofile.html">
-              <img class="profile-image" src="images/avatar.png" alt="">
-              </a></li>
+            <li><a href="/login">Log In</a></li>
           <% } %>
           </li>
       </ul>

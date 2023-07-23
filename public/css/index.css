@@ -92,50 +92,50 @@
   }
 }
 
-.searchBar {
-    transform: translateY(-100px);
-    background-color: var(--black);
-    padding: 4px 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-  
-  
-  .searchBar.open {
-    transform: translateY(0);
-    transition: transform 0.1s;
-  }
-  
-  .searchBar input {
-    margin: 0;
-    border: 0;
-  }
-  
-  #searchClose {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: var(--gray-light);
-    padding: 15px;
-  }
-  
-  
-  .pagination {
-    font-size: 1.3rem;
-    color: var(--gray);
-    text-decoration: none;
-    margin-top: 40px;
-    display: inline-block;
-  }
-  
-  .pagination:hover {
-    color: var(--black);
-  }
+/* Styling for the search bar container */
+.search-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  position: relative;
+  margin-bottom: 25px;
+}
 
-.restaurant-card img {
-    width: 12em; /* Set the width of each card to occupy 30% of the container */
-    height: 12em;
-    text-align: center;
-    margin-bottom: 20px; /* Add some bottom margin to create space between cards */
+/* Styling for the search input field */
+.search-input {
+  width: 800px; /* Adjust the width to your preferred size */
+  padding: 10px;
+  font-size: 16px;
+  border: 3px solid #79A33D;
+  border-radius: 20px;
+  padding-right: 40px; /* Add padding to the right to accommodate the icon */
+
+}
+
+/* Styling for the search icon */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 180px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+}
+
+/* Optional: Styling for the search input when focused */
+.search-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Optional: Styling for the search icon when hovered */
+.search-icon:hover {
+  color: #007bff;
+}
+
+.profile-image {
+  width: 100px; 
+  height: 100px;
+  object-fit: cover;
 }
