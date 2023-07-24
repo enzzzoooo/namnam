@@ -14,7 +14,7 @@
         <div class="input-group">
           <label>Rating:</label>
           <fieldset class="star-rating">
-            <% for( let index = 0; index < 5; index++ ) { %>
+            <% for( let index = 1; index <= 5; index++ ) { %>
                 <input type="radio" id="star<%= 5 - index %>" name="starRating" value="<%= index %>" />
                 <label for="star<%= 5 - index %>"><span class="star">&#9733;</span></label>
             <% } %>

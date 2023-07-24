@@ -1,0 +1,36 @@
+<div class="container full-height-grow">
+  <section class="join-main-section">
+    <form class="join-form" action="/reviews/<%= restaurant._id %>/edit" method="POST">
+      <div class="input-group">
+          <h1 class="join-text">
+            Leave a review!
+          </h1>
+      </div>
+      <input type="hidden" name="userId" value="<%= user._id %>" />
+      <div class="input-group">
+        <label>Restaurant:</label>
+        <input type="text" value=" <%= restaurant.restaurantName %>" readonly name="restaurantName" required />
+      </div>
+      <div class="input-group">
+        <label>Rating:</label>
+        <fieldset class="star-rating">
+          <% for( let index = 1; index <= 5; index++ ) { %>
+              <input type="radio" id="star<%= 5 - index %>" name="starRating" value="<%= index %>" />
+              <label for="star<%= 5 - index %>"><span class="star">&#9733;</span></label>
+          <% } %>
+        </fieldset>
+      </div>
+      <div class="input-group">
+          <label>Review:</label>
+          <input type="review" name="review" value="<%= userReview.review %>">
+        </div>
+        <div class="input-group">
+          <label>Photo URL:</label>
+          <input type="text" name="reviewPhotoUrl" value="<%= userReview.reviewPhotoUrl %>">
+        </div>
+      <div class="input-group">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </form>
+  </section>
+</div>

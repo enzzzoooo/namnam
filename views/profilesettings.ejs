@@ -3,7 +3,10 @@
       profile
       <span class="accent-text">settings.</span>
     </h1>
-    <form class="join-form" action="/register" method="POST">
+    <form class="join-form" action="/profilesettings" method="Post">
+
+        <input type="hidden" name="_method" value="PATCH">
+
       <div class="input-container">
         <div class="input-group ">
           <label>Display Name:</label>
@@ -16,6 +19,10 @@
       <div class="input-group">
         <label>Password:</label>
         <input type="password" name="password" value="<%= userprofile.password %>">
+      </div>
+      <div class="input-group">
+        <label>About Yourself:</label>
+        <input type="text" name="description" value="<%= userprofile.description %>">
       </div>
       <div class="input-group">
         <label>Display Photo URL:</label>

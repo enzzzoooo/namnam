@@ -3,6 +3,7 @@
       <img src="<%= userprofile.displayPhotoUrl %>" alt="pic of person">
       
       <p class="profile-description">@<%= userprofile.username %></p>
+      <p class="profile-description"><%= userprofile.description %></p>
       <!-- Add the Rate Us button below the profile description -->
       <% if (signedInUser._id.toString() == userprofile._id.toString()) { %>
         <a class="rate-us-button" href="/profilesettings" style="text-decoration: none;">Edit Profile</a>
@@ -29,11 +30,15 @@
             
               
               <p><%= reviews[i].review %> </p>
-              <div class="review-buttons">
-                <button class="edit-button">Edit</button>
-                <button class="delete-button">Delete</button>
+              <% if (signedInUser._id.toString() == userprofile._id.toString()) { %>
+                <div class="review-buttons">
+                  <a href="/reviews/<%= restaurantsProfile[i]._id.toString() %>/edit"><button class="edit-button">Edit</button></a>
+                  <a href="/reviews/<%= restaurantsProfile[i]._id.toString() %>/delete"><button class="delete-button">Delete</button></a>
+                </div>
               </div>
-            </div>
+               
+              <% } %>
+              
             <% } %>
         </div>
             

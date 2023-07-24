@@ -21,6 +21,10 @@ const profileSchema = new mongoose.Schema({
         type: String, // Assuming the password will be stored as a hash
         required: true,
     },
+    description: {
+        type: String,
+        required: false,
+    },
     displayPhotoUrl: {
         type: String, // Assuming the profile picture will be stored as a file path or URL
         required: true,

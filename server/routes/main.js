@@ -45,6 +45,7 @@ router.post('/register', async(req, res) => {
         let username = req.body.username
         let password = req.body.password
         let displayName = req.body.displayName
+        let description = req.body.description
         let displayPhotoUrl = req.body.displayPhotoUrl
         let userType = "user"
 
@@ -53,7 +54,8 @@ router.post('/register', async(req, res) => {
             password,
             displayName,
             userType,
-            displayPhotoUrl
+            displayPhotoUrl,
+            description
         });
 
         res.redirect(`/login`);
@@ -152,15 +154,20 @@ router.get('/profilesettings', async(req, res) => {
 })
 
 // profilesettings patch route
-router.patch('/profilesettings', async(req, res) => {
+router.post('/profilesettings', async(req, res) => {
     try {
+
+
         let signedInUser = res.locals.user;
         let userprofile = await User.findById(signedInUser._id);
         userprofile.displayName = req.body.displayName;
         userprofile.password = req.body.password;
         userprofile.displayPhotoUrl = req.body.displayPhotoUrl;
+        console.log('DUMADAAN BA SIYA DITO')
+        console.log(userprofile)
         await User.findByIdAndUpdate(signedInUser._id, userprofile);
-        res.redirect(`/profile/${signedInUser._id}`);
+        console.log(User.findById(signedInUser._id))
+        res.redirect(`/profile/${signedInUser._id.toString()}`);
     }
     catch (error) {
         console.log(error)
@@ -223,6 +230,7 @@ router.get('/reviews/:id', async(req, res) => {
             return;
         }
         
+        
         // pass the restaurant details to the review form
         res.render('review', { restaurant });
     } catch (error) {
@@ -230,6 +238,70 @@ router.get('/reviews/:id', async(req, res) => {
         res.status(500).send('Server error');
     }
 })
+
+// review edit
+router.get('/reviews/:id/edit', async(req, res) => {
+    try {
+        const restaurantId = req.params.id;
+        const restaurant = await Restaurant.findById(restaurantId);
+
+        let userReview = await Reviews.findOne({
+            userId: res.locals.user._id,
+            restaurantId: restaurantId
+        })
+
+        res.render(`reviewedit`, { restaurant, userReview });
+    }
+    catch (error) {
+        console.log(error)
+    }
+})
+
+router.post('/reviews/:id/edit', async (req, res) => {
+    const { userId, starRating, review, reviewPhotoUrl } = req.body;
+    const restaurantId = req.params.id;
+    const restaurantIdredict = `/restaurant/${restaurantId}`
+
+    //update review in our database
+
+    try {
+        const reviewDoc = await Reviews.findOneAndUpdate({
+            userId: userId,
+            restaurantId: restaurantId
+        }, {
+            userId,
+            restaurantId,
+            starRating,
+            review,
+            reviewPhotoUrl
+        });
+
+        res.redirect(`/restaurant/${restaurantId}`);
+    } catch(err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+})
+
+// review delete
+router.get('/reviews/:id/delete', async(req, res) => {
+    try {
+        const restaurantId = req.params.id;
+
+        const reviewDel = await Reviews.findOneAndDelete({
+            userId: res.locals.user._id,
+            restaurantId: restaurantId
+        })
+
+        res.redirect(`/restaurant/${restaurantId}`);
+    }
+    catch (error) {
+        console.log(error)
+    }
+})
+
+
+
 
 // function insertRestaurantData () {
 //     Restaurant.insertMany([

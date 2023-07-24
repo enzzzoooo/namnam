@@ -29,6 +29,8 @@
   
   .profile-description {
     color: black;
+    justify-content: center;
+    text-align: center;
   }
   
   .profile-name-row {
@@ -71,6 +73,7 @@
   .review {
     align-items: center;
     margin-bottom: 20px;
+    padding-bottom: 20px;
     position: relative;
     color: black;
     background-color: #c7d8ad;
@@ -163,8 +166,15 @@
   .star-rating .star {
     display: inline-block;
     font-size: 20px;
+    
+  }
+
+  .star-rating .star:hover {
+    color: gold; /* Color for inactive stars */
+    border: none;
   }
   
   .star-rating input[type="radio"] {
     display: none; /* Hide the radio buttons */
+    color: gold;
   }
