@@ -27,10 +27,12 @@
              <p>There are no reviews yet. Be the first to review!</p>
             <% } %>
             <% for( let i = 0; i < reviews.length; i++ ) { %>
-            
+              
+            <div class="review-container">
             <div class="review">
-              <img src="<%= reviewsWithUser[i].user.displayPhotoUrl %>" alt="Review 1">
+              <img src="<%= reviewsWithUser[i].user.displayPhotoUrl %>" alt="Review 1" class="profilepicc">
               <a href="/profile/<%= reviewsWithUser[i].user._id %>" style="text-decoration: none; color: black;"><h4><%= reviewsWithUser[i].user.displayName %></h4></a>
+              
               <div class="input-group">
                 <fieldset class="star-rating">
                     <% for( let index = 0; index < reviews[i].starRating; index++ ) { %>
@@ -38,11 +40,13 @@
                         <label for="star<%= 5 - index %>"><span class="star">&#9733;</span></label>
                     <% } %>
                 </fieldset>
-            </div>
-              
+            
+            <img src="<%= reviewsWithUser[i].reviewPhotoUrl %>" alt="" class="reviewPhotoUrl">
               <p><%= reviews[i].review %> </p>
-
+            </div>
+          </div>
             <% } %>
+          
         </div>
             
     

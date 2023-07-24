@@ -11,20 +11,22 @@
     margin: 10px;
     display: flex; /* Add display flex to align contents */
     flex-direction: column; /* Align items vertically */
-    justify-content: center; /* Center contents vertically */
+    justify-content: top; /* Center contents vertically */
     align-items: center; /* Center contents horizontally */
+    padding-top: 100px;
   }
   
   .profile-reviews {
     flex-basis: 65%; /* Take up 2/3rds of the available space */
     padding: 20px;
     border-radius: 10px;
-    margin: 10px;
+    margin-bottom: 20px;
   }
-  
+
   /* Additional styling for text */
   .profile-name h1 {
     color: black;
+    padding-top: 10px;
   }
   
   .profile-description {
@@ -78,21 +80,34 @@
     color: black;
     background-color: #c7d8ad;
   }
-  
-  .review img {
+  .review-container {
+    margin-bottom: 20px;
+  }
+  .profilepicc {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
     margin-left: 10px;
+    margin-top: 10px;
+
+    display: inline-block;
+  }
+
+  .reviewPhotoUrl {
+    width: 20rem;
+    height: 20rem; 
+    margin-right: 10px;
+    margin-left: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
     display: inline-block
   }
   
   .review h4 {
     display: inline-block; /* Display the heading as inline-block */
-    vertical-align: middle; /* Vertically align the heading with the text */
-    margin: 0; /* Reset any default margin that might be applied */
+    vertical-align: top; /* Vertically align the heading with the text */
+
   }
   .review p {
     margin: 0; /* Reset the default margin for the paragraph */

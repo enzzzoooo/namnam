@@ -183,10 +183,10 @@
 }
 
 .profile-image {
-  width: 2em; 
-  height: 2em;
+  width: 3em; 
+  height: 3em;
   object-fit: cover;
-  border-radius: 3px; /* Make the images slightly curved */
+  border-radius: 100px; /* Make the images slightly curved */
   border: 3px solid #F1AC18; /* Add a yellow border to the restaurant cards */
-  border-radius: 3px;
+  border-radius: 100px;
 }
