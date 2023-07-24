@@ -94,7 +94,7 @@
 
 /* Styling for the search bar container */
 .search-container {
-  display: flex;
+  display: flexbox;
   justify-content: center; /* Horizontally center the content */
   align-items: center; /* Vertically center the content */
   position: relative;

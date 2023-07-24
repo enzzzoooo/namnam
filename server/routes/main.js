@@ -42,11 +42,11 @@ router.get('/', async(req, res) => {
 //register route
 router.post('/register', async(req, res) => {
     try {
-        const username = req.body.username
-        const password = req.body.password
-        const displayName = req.body.displayName
-        const displayPhotoUrl = req.body.displayPhotoUrl
-        const userType = "user"
+        let username = req.body.username
+        let password = req.body.password
+        let displayName = req.body.displayName
+        let displayPhotoUrl = req.body.displayPhotoUrl
+        let userType = "user"
 
         await User.create({
             username,
@@ -67,6 +67,8 @@ router.get('/restaurant/:id', async(req, res) => {
     try {
         const fetchedRestaurant = await Restaurant.findById(req.params.id);
 
+        console.log(fetchedRestaurant)
+
         if (!fetchedRestaurant) {
             res.status(404).send('Restaurant not found');
             return;
@@ -75,6 +77,22 @@ router.get('/restaurant/:id', async(req, res) => {
         const reviews = await Reviews.find({
             restaurantId: fetchedRestaurant.id,
         });
+
+        console.log(reviews)
+
+        let users = await User.find({
+            _id: reviews.map(review => review.userId)
+        })
+
+        let reviewsWithUser = reviews.map(review => {
+            let user = users.find(user => user._id.toString() === review.userId.toString())
+            return {
+                ...review._doc,
+                user
+            }
+        })
+
+        console.log(users)
         
         const total = reviews.reduce((acc, curr) => (
             acc + curr.starRating
@@ -84,17 +102,76 @@ router.get('/restaurant/:id', async(req, res) => {
         const restaurant = {
             ...fetchedRestaurant._doc,
             avgRating: averageReview,
+
         }
+        console.log('REVIEWSWITHUSER',reviewsWithUser,'END')
         
-        res.render('restaurant', { restaurant, reviews })
+        res.render('restaurant', { restaurant, reviews, reviewsWithUser })
     } catch (error) {
         console.log(error)
     }
 })
 
+// profile route
+router.get('/profile/:id', async(req, res) => {
+    try {
+        const userprofile = await User.findById(req.params.id);
+        const reviews = await Reviews.find({
+            userId: userprofile.id,
+        });
+
+        const restaurantsProfile = await Restaurant.find({
+        });
+
+        console.log(res.locals.user)
+        console.log(userprofile)
+        let signedInUser = res.locals.user;
+        console.log(signedInUser._id.toString())
+        console.log(userprofile._id.toString())
+        // stringigy the object id
+
+        console.log(signedInUser._id.toString() == userprofile._id.toString())
+
+
+        res.render('profile', { userprofile, reviews, restaurantsProfile, signedInUser })
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+// profilesettings route
+router.get('/profilesettings', async(req, res) => {
+    try {
+        let signedInUser = res.locals.user;
+        let userprofile = await User.findById(signedInUser._id);
+        res.render('profilesettings', { userprofile })
+    }
+    catch (error) {
+        console.log(error)
+    }
+})
+
+// profilesettings patch route
+router.patch('/profilesettings', async(req, res) => {
+    try {
+        let signedInUser = res.locals.user;
+        let userprofile = await User.findById(signedInUser._id);
+        userprofile.displayName = req.body.displayName;
+        userprofile.password = req.body.password;
+        userprofile.displayPhotoUrl = req.body.displayPhotoUrl;
+        await User.findByIdAndUpdate(signedInUser._id, userprofile);
+        res.redirect(`/profile/${signedInUser._id}`);
+    }
+    catch (error) {
+        console.log(error)
+    }
+})
+
+
 router.post('/reviews/:id', async (req, res) => {
     const { userId, starRating, review, reviewPhotoUrl } = req.body;
     const restaurantId = req.params.id;
+    const restaurantIdredict = `/restaurant/${restaurantId}`
 
     //Create review in our database
     try {
@@ -106,7 +183,7 @@ router.post('/reviews/:id', async (req, res) => {
             reviewPhotoUrl
         });
 
-        res.redirect(`/restaurant/:id`);
+        res.redirect(`/restaurant/${restaurantId}`);
     } catch(err) {
         console.error(err);
         res.status(500).send('Server error');
@@ -116,11 +193,12 @@ router.post('/reviews/:id', async (req, res) => {
 //profile route
 router.get('/profile/:id', async(req, res) => {
     try {
-        const profile = await Profile.findById(req.params.id);
+        const profile = await User.findById(req.params.id);
         const reviews = await Reviews.find({
             userId: profile.id,
         });
-        res.render('profile', { restaurant, reviews })
+
+        res.render('profile', { profile, reviews })
     } catch (error) {
         console.log(error)
     }

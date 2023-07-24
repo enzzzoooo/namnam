@@ -92,7 +92,55 @@
   }
 }
 
-/* Styling for the search bar container */
+.searchBar {
+    transform: translateY(-100px);
+    background-color: var(--black);
+    padding: 4px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  
+  
+  .searchBar.open {
+    transform: translateY(0);
+    transition: transform 0.1s;
+  }
+  
+  .searchBar input {
+    margin: 0;
+    border: 0;
+  }
+  
+  #searchClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--gray-light);
+    padding: 15px;
+  }
+  
+  
+  .pagination {
+    font-size: 1.3rem;
+    color: var(--gray);
+    text-decoration: none;
+    margin-top: 40px;
+    display: inline-block;
+  }
+  
+  .pagination:hover {
+    color: var(--black);
+  }
+
+.restaurant-card img {
+    width: 12em; /* Set the width of each card to occupy 30% of the container */
+    height: 12em;
+    text-align: center;
+    margin-bottom: 20px; /* Add some bottom margin to create space between cards */
+}
+
+* Styling for the search bar container */
 .search-container {
   display: flex;
   justify-content: center; /* Horizontally center the content */
@@ -135,7 +183,10 @@
 }
 
 .profile-image {
-  width: 100px; 
-  height: 100px;
+  width: 2em; 
+  height: 2em;
   object-fit: cover;
+  border-radius: 3px; /* Make the images slightly curved */
+  border: 3px solid #F1AC18; /* Add a yellow border to the restaurant cards */
+  border-radius: 3px;
 }

@@ -1,21 +1,16 @@
 <section class="profile-page">
     <div class="profile-detail">
-      <img src="images/24chix (1).jpg" alt="">
+      <img src="<%= restaurant.picture %>" alt="pic of resto">
       <div class="input-group">
         <fieldset class="star-rating">
-          <input type="radio" id="star5" name="rating" value="5" disabled />
-          <label for="star5"><span class="star">&#9733;</span></label>
-          <input type="radio" id="star4" name="rating" value="4" disabled />
-          <label for="star4"><span class="star">&#9733;</span></label>
-          <input type="radio" id="star3" name="rating" value="3" checked disabled />
-          <label for="star3"><span class="star">&#9733;</span></label>
-          <input type="radio" id="star2" name="rating" value="2" disabled />
-          <label for="star2"><span class="star">&#9733;</span></label>
-          <input type="radio" id="star1" name="rating" value="1" disabled />
-          <label for="star1"><span class="star">&#9733;</span></label>
-        </fieldset>
+            <fieldset class="star-rating">
+                <% for( let index = 0; index < restaurant.avgRating; index++ ) { %>
+                    <input type="radio" id="star<%= 5 - index %>" name="rating" value="<%= 5 - index %>" disabled />
+                    <label for="star<%= 5 - index %>"><span class="star">&#9733;</span></label>
+                <% } %>
+            </fieldset>
       </div>
-      <p class="profile-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+      <p class="profile-description"><%= restaurant.description %></p>
       <!-- Add the Rate Us button below the profile description -->
       <% if (user) { %>
         <a class="rate-us-button" href="/reviews/<%= restaurant._id %>" style="text-decoration: none;">Rate Us!</a>
@@ -25,17 +20,21 @@
     
     </div>
         <div class="profile-reviews">
-            <% for( let i = 0; i < reviews.length; i++ ) { %>
             <div class="profile-name-row">
-              <span class="profile-name"><h1>24 Chicken</h1></span>
-            </div>
+                <span class="profile-name"><h1><%= restaurant.restaurantName %></h1></span>
+              </div>
+            <% if (reviews.length < 1) { %>
+             <p>There are no reviews yet. Be the first to review!</p>
+            <% } %>
+            <% for( let i = 0; i < reviews.length; i++ ) { %>
+            
             <div class="review">
-              <img src="<%= restaurant.reviewPhotoUrl %>" alt="Review 1">
-              <h4>Sarah Tan</h4>
+              <img src="<%= reviewsWithUser[i].user.displayPhotoUrl %>" alt="Review 1">
+              <a href="/profile/<%= reviewsWithUser[i].user._id %>" style="text-decoration: none; color: black;"><h4><%= reviewsWithUser[i].user.displayName %></h4></a>
               <div class="input-group">
                 <fieldset class="star-rating">
                     <% for( let index = 0; index < reviews[i].starRating; index++ ) { %>
-                        <input type="radio" id="star<%= 5 - index %>" name="rating" value="<%= 5 - index %>" disabled />
+                        <input type="radio" id="star<%= 5 - index %>" name="rating" value="<%= index %>" disabled />
                         <label for="star<%= 5 - index %>"><span class="star">&#9733;</span></label>
                     <% } %>
                 </fieldset>

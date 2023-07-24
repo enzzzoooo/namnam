@@ -1,0 +1,41 @@
+<section class="profile-page">
+    <div class="profile-detail">
+      <img src="<%= userprofile.displayPhotoUrl %>" alt="pic of person">
+      
+      <p class="profile-description">@<%= userprofile.username %></p>
+      <!-- Add the Rate Us button below the profile description -->
+      <% if (signedInUser._id.toString() == userprofile._id.toString()) { %>
+        <a class="rate-us-button" href="/profilesettings" style="text-decoration: none;">Edit Profile</a>
+      <% } %>
+    </div>
+        <div class="profile-reviews">
+            <div class="profile-name-row">
+                <span class="profile-name"><h1><%= userprofile.displayName %></h1></span>
+              </div>
+            <% for( let i = 0; i < reviews.length; i++ ) { %>
+            
+            <div class="review">
+              <img src="<%= restaurantsProfile[i].picture %>" alt="Review 1">
+              <h4><%= restaurantsProfile[i].restaurantName %></h4>
+              <div class="input-group">
+                <fieldset class="star-rating">
+                    <% for( let index = 0; index < reviews[i].starRating; index++ ) { %>
+                        <input type="radio" id="star<%= 5 - index %>" name="rating" value="<%= index %>" disabled />
+                        <label for="star<%= 5 - index %>"><span class="star">&#9733;</span></label>
+                    <% } %>
+                </fieldset>
+            </div>
+
+            
+              
+              <p><%= reviews[i].review %> </p>
+              <div class="review-buttons">
+                <button class="edit-button">Edit</button>
+                <button class="delete-button">Delete</button>
+              </div>
+            </div>
+            <% } %>
+        </div>
+            
+    
+  </section>
