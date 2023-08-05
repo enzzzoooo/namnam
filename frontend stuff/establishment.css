@@ -165,8 +165,6 @@ color: white;
   gap: 10px;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 20px;
-
 }
 
 .review .input-group {
@@ -179,7 +177,7 @@ color: white;
   background-color: #4CAF50;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 5px 10px;
   font-size: 14px;
   border-radius: 5px;
   cursor: pointer;
