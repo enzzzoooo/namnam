@@ -121,6 +121,18 @@ color: white;
   right: 70px; /* Adjust the positioning for the "Thumbs Up" button */
 }
 
+/* Counter Styles */
+.counter {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  background-color: #fff;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 10px;
+  color: #333;
+}
+
 .profile-detail img {
   width: 250px;
   height: 250px;
