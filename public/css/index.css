@@ -49,6 +49,7 @@
   width: 29%; /* Set the width of each card to occupy 30% of the container */
   text-align: center;
   margin-bottom: 20px; /* Add some bottom margin to create space between cards */
+  
 }
 
 /* Existing CSS code for .restaurant-card img */
@@ -58,6 +59,7 @@
   border-radius: 10px; /* Make the images slightly curved */
   border: 5px solid #F1AC18; /* Add a yellow border to the restaurant cards */
   border-radius: 10px;
+  object-fit: cover;
 }
 
 /* Existing CSS code for .restaurant-title */

@@ -22,3 +22,31 @@
       <p class="register-prompt">New here? <a href="/register">Register</a> instead!</p>
     </form>
   </section>
+  // form validation
+  <script>
+    function validateForm() {
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+      
+      if (!isValidUsername(usernameInput.value)) {
+        alert('Please enter a valid username.');
+        return false;
+      }
+      
+      if (!isValidPassword(passwordInput.value)) {
+        alert('Please enter a valid password.');
+        return false;
+      }
+      
+      return true;
+    }
+    
+    function isValidUsername(username) {
+      return username.length >= 4;
+    }
+    
+    function isValidPassword(password) {
+      return password.length >= 8;
+    }
+  </script>
+  

@@ -86,6 +86,7 @@
   .profilepicc {
     width: 50px;
     height: 50px;
+    object-fit: cover;
     border-radius: 50%;
     margin-right: 10px;
     margin-left: 10px;
@@ -101,7 +102,8 @@
     margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    display: inline-block
+    display: inline-block;
+    object-fit: cover;
   }
   
   .review h4 {
@@ -113,6 +115,7 @@
     margin: 0; /* Reset the default margin for the paragraph */
     margin-left: 20px; /* Add left margin */
     margin-right: 20px; /* Add right margin */
+    object-fit: cover;
   }
   
   .profile-detail img {
@@ -120,6 +123,7 @@
     height: 250px;
     border-radius: 50%;
     margin-right: 10px;
+    object-fit: cover;
   }
   
   

@@ -4,7 +4,10 @@
       <div class="brand-logo-name">namnam</div>
     </a>
     <nav class="main-nav">
-      <ul class="flex-center">    
+      <ul class="flex-center"> 
+        <li>
+          <a href="/about">About Us</a>
+        </li>   
           <% if (user) { %>
               <li><a href="/profile/<%= user._id %>">
                   <img class="profile-image" src="<%= user.displayPhotoUrl %>" alt="">

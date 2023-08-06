@@ -7,15 +7,15 @@
       <div class="input-container">
         <div class="input-group ">
           <label>Display Name:</label>
-          <input type="given" name="displayName" >
+          <input type="given" required name="displayName" >
         </div>
       <div class="input-group">
         <label>Username:</label>
-        <input type="username" name="username">
+        <input type="username" required name="username">
       </div>
       <div class="input-group">
         <label>Password:</label>
-        <input type="password" name="password">
+        <input type="password" required name="password">
       </div>
       <div class="input-group">
         <label>About Yourself:</label>
@@ -30,3 +30,30 @@
       </div>
     </form>
   </section>
+  // form validation
+  <script>
+    function validateForm() {
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+      
+      if (!isValidUsername(usernameInput.value)) {
+        alert('Please enter a valid username.');
+        return false;
+      }
+      
+      if (!isValidPassword(passwordInput.value)) {
+        alert('Please enter a valid password.');
+        return false;
+      }
+      
+      return true;
+    }
+    
+    function isValidUsername(username) {
+      return username.length >= 4;
+    }
+    
+    function isValidPassword(password) {
+      return password.length >= 8;
+    }
+  </script>
