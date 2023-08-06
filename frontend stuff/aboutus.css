@@ -1,0 +1,98 @@
+/* Styles for the about us page */
+
+.about-us-section {
+    padding: 2rem;
+  }
+  
+  .about-us-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .about-us-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .features-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .features-list {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-left: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid #F1AC18;
+  }
+  
+  .features-list li {
+    margin-bottom: 1rem;
+  }
+  
+  /* Additional styles for the "Join the Namnam Community" section */
+  
+  .join-community-section {
+    margin-top: 2rem;
+  }
+  
+  .join-community-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .join-community-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .join-community-highlight {
+    font-size: 1.2em;
+    color: #F1AC18;
+    font-weight: bold;
+  }
+  
+  .join-community-welcome {
+    font-size: 1.5em;
+    margin-top: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* New styles for the "Join the Namnam Community" section */
+  
+  .join-community-section {
+    margin-top: 2rem;
+  }
+  
+  .join-community-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .join-community-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .join-community-highlight {
+    font-size: 1.2em;
+    color: #F1AC18;
+    font-weight: bold;
+  }
+  
+  .join-community-welcome {
+    font-size: 1.5em;
+    margin-top: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  

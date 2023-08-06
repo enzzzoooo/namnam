@@ -5,8 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="styles.css" rel="stylesheet">
-  <link href="establishment.css" rel="stylesheet">
+  <link href="owner.css" rel="stylesheet">
   <title>namnam</title>
+  <script>
+    function showCommentForm() {
+      // Create the comment form elements
+      const commentForm = document.createElement("div");
+      commentForm.classList.add("comment-form-container"); // Add the new class
+
+      const commentTextarea = document.createElement("textarea");
+      const submitButton = document.createElement("button");
+      submitButton.textContent = "Submit";
+
+      // Add event listener to the submit button
+      submitButton.addEventListener("click", function () {
+        const commentText = commentTextarea.value;
+        // Call a function to handle submitting the comment to the server or processing it as needed
+        // For demonstration purposes, we'll just append the comment below the review
+        appendComment(commentText);
+      });
+
+      // Append the elements to the comment form div
+      commentForm.appendChild(commentTextarea);
+      commentForm.appendChild(submitButton);
+
+      // Get the parent review div and append the comment form after it
+      const parentReviewDiv = event.target.closest(".review");
+      parentReviewDiv.appendChild(commentForm);
+    }
+
+    function appendComment(commentText) {
+      // Create a new element for the comment text
+      const commentElement = document.createElement("p");
+      commentElement.textContent = commentText;
+
+      // Get the parent review div and append the comment below it
+      const parentReviewDiv = event.target.closest(".review");
+      parentReviewDiv.appendChild(commentElement);
+    }
+  </script>
+
 </head>
 <body class="full-height-grow">
   <div class="container full-height-grow">
@@ -45,7 +83,7 @@
         </div>
         <p class="profile-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
         <!-- Add the Rate Us button below the profile description -->
-        <button class="rate-us-button">Rate Us!</button>
+        <!-- <button class="rate-us-button">Rate Us!</button> -->
       </div>
       <div class="profile-reviews">
         <div class="profile-name-row">
@@ -70,10 +108,7 @@
           </div>
           <p>This isKQENGKOQENAOFKNQEOKG JSANOQWNGOQNEO </p>
           <div class="review-buttons">
-            <button class="thumbs-up-button">&#128077;<span class="counter">25</span></button>
-            <button class="thumbs-down-button">&#128078;<span class="counter">25</span></button>
-            <button class="edit-button">Edit</button>
-            <button class="delete-button">Delete</button>
+                <button class="edit-button" onclick="showCommentForm()">Respond</button>
           </div>
         </div>
         <div class="review">
@@ -95,10 +130,7 @@
           </div>
           <p>This is a review for Restaurant 2.AJSBGJQOEG</p>
           <div class="review-buttons">
-            <button class="thumbs-up-button">&#128077;<span class="counter">25</span></button>
-            <button class="thumbs-down-button">&#128078;<span class="counter">25</span></button>
-            <button class="edit-button">Edit</button>
-            <button class="delete-button">Delete</button>
+            <button class="edit-button">respond</button>
           </div>
         </div>
         <p>see older reviews</p>
@@ -108,9 +140,10 @@
     <!-- Join section -->
     <section class="join-main-section">
       <h1 class="join-text">
-        Resto
+        Owner Page
       </h1>
     </section>
   </div>
+  
 </body>
 </html>

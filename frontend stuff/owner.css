@@ -1,0 +1,206 @@
+.profile-page {
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  
+  .profile-detail {
+    max-width: 20vw; /* Remove the minimum width */
+    flex-basis: 33%; /* Take up 1/3rd of the available space */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex; /* Add display flex to align contents */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+  }
+  
+  .profile-reviews {
+    flex-basis: 65%; /* Take up 2/3rds of the available space */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  /* Additional styling for text */
+  .profile-name h1 {
+    color: black;
+  }
+  
+  .profile-description {
+    color: black;
+  }
+  
+  .profile-name-row {
+  display: flex;
+  justify-content: center; /* Center the profile-name horizontally */
+  padding: 10px;
+  }
+  
+  .profile-name {
+  color: white;
+  }
+  
+  /* Existing CSS for .profile-page remains the same */
+  
+  .profile-name-row {
+    display: flex;
+    justify-content: center; /* Center the profile-name horizontally */
+  }
+  
+  .profile-name {
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+    display: flex; /* Add display flex to the profile-name div */
+    justify-content: center; /* Center the contents horizontally */
+    align-items: center; /* Center the contents vertically */
+  }
+  
+  .profile-details-and-reviews {
+    display: flex; /* Display the divs side by side */
+    flex-wrap: wrap; /* Allow them to wrap to a new line if necessary */
+  }
+  .review-buttons {
+    /* Remove absolute positioning and use flex properties for alignment */
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Push the buttons to the bottom of the .review div */
+  }
+  
+  .review {
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    color: black;
+    background-color: #c7d8ad;
+  }
+  
+  .review img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+    display: inline-block
+  }
+  
+  .review h4 {
+    display: inline-block; /* Display the heading as inline-block */
+    vertical-align: middle; /* Vertically align the heading with the text */
+    margin: 0; /* Reset any default margin that might be applied */
+  }
+  .review p {
+    margin: 0; /* Reset the default margin for the paragraph */
+    margin-left: 20px; /* Add left margin */
+    margin-right: 20px; /* Add right margin */
+  }
+  
+  .profile-detail img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  
+  .button-container {
+    display: flex;
+    justify-content: left;
+  }
+  .rate-us-button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color:black;
+  }
+  
+  .rate-us-button:hover {
+    background-color: #f57c00;
+  }
+  
+  .review-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  
+  }
+  
+  .review .input-group {
+    vertical-align: middle;
+    margin-left: 60px; /* Add the left margin to the star rating */
+  }
+  
+  .edit-button,
+  .delete-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom:10px;
+  }
+  
+  .edit-button:hover,
+  .delete-button:hover {
+    background-color: #45a049;
+  }
+  
+  
+  .star-rating {
+    color: gold; /* Color for inactive stars */
+    border: none;
+  }
+  
+  .star-rating .star {
+    display: inline-block;
+    font-size: 20px;
+  }
+  
+  .star-rating input[type="radio"] {
+    display: none; /* Hide the radio buttons */
+  }
+  
+/* Add styles for the comment form container */
+.comment-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .comment-form-container textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  .comment-form-container button {
+    background-color:  #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1.0rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .comment-form-container button:hover {
+    background-color: #45a049;
+  }
+  
